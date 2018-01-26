@@ -1,0 +1,53 @@
+div.container {
+    width: 100%;
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: #6582b5;
+    clear: left;
+    text-align: center;
+}
+
+nav {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+    max-height: 450px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+nav a {
+    text-decoration: none;
+    width: 100%;
+    margin-bottom: 2px;
+}
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+    min-height: 450px;
+}
+.logout {
+  float: right;
+}
+
+.prev_next_container {
+  display: inline;
+  width: 100%;
+  margin-top: 450px;
+  min-height: 250px;
+}
+
+.prev {
+  float: left;
+}
+
+.next {
+  float: right;
+}
