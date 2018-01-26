@@ -154,11 +154,11 @@ class StudentProblem extends Component {
   renderProblemStatement(currProb, index) {
     switch (currProb.questionType) {
       case 'INTEGER_TYPE':
-        return (index + '. ' + currProb.integerProblem.problemStatement);
+        return ((index + 1) + '. ' + currProb.integerProblem.problemStatement);
       case 'SINGLE_MORE_TYPE':
-        return (index + '. ' + currProb.singleMoreProblem.problemStatement);
+        return ((index + 1) + '. ' + currProb.singleMoreProblem.problemStatement);
       case 'MATRIX_MATCH_TYPE':
-        return (index + '. ' + currProb.matrixProblem.problemStatement);
+        return ((index + 1) + '. ' + currProb.matrixProblem.problemStatement);
         default:
         return "select problem";
       }
@@ -198,14 +198,6 @@ class StudentProblem extends Component {
     }
     return (
         <div className="container">
-
-        <header>
-          <div>
-            <div>{currentProblem && currentProblem.questionType}</div>
-            <h2 className="logout"><Link to="/login">Logout</Link></h2>
-         </div>
-        </header>
-
         <nav>
         {
           problemList &&
@@ -239,7 +231,7 @@ class StudentProblem extends Component {
             </div>
           </div>
         </article>
-        <footer>&copy; YATI EDUCATION</footer>
+        
 
         </div>
     );

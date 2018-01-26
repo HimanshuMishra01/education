@@ -61,7 +61,12 @@ class ChallengeList extends React.Component {
           {
             list &&
              list.map(challengeData => (
-            <ChallengeListItem key={challengeData.id} {...challengeData} onClick={(event) => this.onChallengeClick(event, challengeData.duration)}
+            <ChallengeListItem key={challengeData.id} {...challengeData}
+            onClick={(event) => this.onChallengeClick(event, challengeData.duration)}
+            challengeName={challengeData.name}
+            startTime={moment(challengeData.startTime).format("MM/DD/YYYY HH:mm:ss")}
+            endTime={moment(challengeData.endTime).format("MM/DD/YYYY HH:mm:ss")}
+            duration={challengeData.duration}
             text={ challengeData.name + " " + challengeData.standard + " " +
             moment(challengeData.startTime).format("MM/DD/YYYY HH:mm:ss") + " - "
             + moment(challengeData.endTime).format("MM/DD/YYYY HH:mm:ss") + " Duration: " + challengeData.duration} />

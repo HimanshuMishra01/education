@@ -118,12 +118,7 @@ class StudentScoreSheet extends Component {
     return (
       <div className="container">
 
-      <header>
-        <div>
-          <div>{problemList && problemList[score.index].questionType}</div>
-          <h2 className="logout"><Link to="/login">Logout</Link></h2>
-       </div>
-      </header>
+
 
       <nav>
       {
@@ -176,7 +171,7 @@ class StudentScoreSheet extends Component {
           </div>
         </div>
       </article>
-      <footer>&copy; YATI EDUCATION</footer>
+
 
       </div>
     );

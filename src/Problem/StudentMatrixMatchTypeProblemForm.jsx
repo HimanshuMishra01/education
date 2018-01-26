@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MatrixSolutionRadioOption from './MatrixSolutionRadioOption';
 import StudentMatrixRadioOption from './StudentMatrixRadioOption';
+import {InlineTex} from 'react-tex';
 
 class StudentMatrixMatchTypeProblemForm extends Component {
   constructor(props) {
@@ -75,8 +76,8 @@ class StudentMatrixMatchTypeProblemForm extends Component {
       <div style={styles.mainContainer}>
           <form name="matrix_match_prob_form" onSubmit={(event) => handleSubmit(event, matrixMatchProblem)}>
           <strong>Problem Statement</strong>
-          {matrixProblem.problemStatement}
 
+          {matrixProblem.problemStatement && <InlineTex texContent={matrixProblem.problemStatement}/>}
           <div style={styles.containerStyle}>
             <div style={styles.leftContainer}>
             {

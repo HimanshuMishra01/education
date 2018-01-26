@@ -35,9 +35,6 @@ class HomePage extends React.Component {
                 <p>
                     <Link to="/admin_solution">Student Solution</Link>
                 </p>
-                <p>
-                    <Link to="/login">Logout</Link>
-                </p>
             </div>
         );
       } else {

@@ -22,9 +22,7 @@ class StudentHome extends React.Component {
                 <p>
                     <Link to="/challenge_list">My Challenges</Link>
                 </p>
-                <p>
-                    <Link to="/login">Logout</Link>
-                </p>
+                
             </div>
         );
     }

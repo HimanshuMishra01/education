@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {InlineTex} from 'react-tex';
 
 class StudentSingleMoreProblemForm extends Component {
   constructor(props) {
@@ -47,7 +48,7 @@ class StudentSingleMoreProblemForm extends Component {
       <div>
         <form name="student_single_more_prob_form" onSubmit={(event) => handleSubmit(event, studentSingleMoreProblem)}>
           <strong>Problem Statement</strong>
-          <div>{singleMoreProblem.problemStatement}</div>
+          <div>{singleMoreProblem.problemStatement && <InlineTex texContent={singleMoreProblem.problemStatement}/>}</div>
           <strong>Options</strong>
           <div className={'form-group col-lg-12'}>
               {

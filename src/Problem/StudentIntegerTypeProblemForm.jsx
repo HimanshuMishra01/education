@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {InlineTex} from 'react-tex';
 
 class StudentIntegerTypeProblemForm extends Component {
   constructor(props) {
@@ -7,7 +8,7 @@ class StudentIntegerTypeProblemForm extends Component {
         studentIntegerProblem : {
           statement: '',
           solution: '',
-          
+
         },
         submitted: false
     };
@@ -25,16 +26,16 @@ class StudentIntegerTypeProblemForm extends Component {
   }
 
   render(props) {
-    const {handleSubmit, handleChange, registering, counter, probStatement, clear} = this.props;
-    const { studentIntegerProblem, submitted } = this.state;
+    let {handleSubmit, handleChange, registering, counter, probStatement, clear} = this.props;
+    let { studentIntegerProblem, submitted } = this.state;
     console.log("props ******************** " + JSON.stringify(this.props));
-
+    console.log(" probStatement " + probStatement);
     return (
       <div>
           <form name="student_integer_prob_form" onSubmit={(event) => handleSubmit(event, studentIntegerProblem)}>
               <div className={'form-group col-lg-12' + (submitted && !studentIntegerProblem.statement ? ' has-error' : '')}>
                   <label htmlFor="statement">Problem Statement</label>
-                  <div>{ probStatement }</div>
+                  <div>{probStatement && <InlineTex texContent={probStatement}/> }</div>
               </div>
               <div className={'form-group col-lg-12' + (submitted && !studentIntegerProblem.solution ? ' has-error' : '')}>
                   <label htmlFor="solution">Problem Solution [Use comma(,) for multiple answer]</label>

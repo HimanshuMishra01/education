@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route } from 'react-router-dom';
+import { Router, Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { history } from '../_helpers';
@@ -29,13 +29,21 @@ class App extends React.Component {
         const { alert } = this.props;
         return (
             <div className="jumbotron">
+            <Router history={history}>
                 <div className="container">
-                    <div className="col-sm-8 col-sm-offset-2">
+
+                    <header>
+                      <Link to="/"><img src="image.jpeg" style={styles.imageStyle} /></Link>
+                      YATI EDUCATION
+                    </header>
+                    <h3 className="logout"><Link to="/login">Logout</Link></h3>
+                    <div>
                         {alert.message &&
                             <div className={`alert ${alert.type}`}>{alert.message}</div>
                         }
-                        <Router history={history}>
+
                             <div>
+
                                 <PrivateRoute exact path="/" component={HomePage} />
                                 <Route path="/login" component={LoginPage} />
                                 <Route path="/register" component={RegisterPage} />
@@ -50,12 +58,24 @@ class App extends React.Component {
 
 
                             </div>
-                        </Router>
+
                     </div>
+                    <footer>&copy; YATI EDUCATION</footer>
                 </div>
+                </Router>
             </div>
         );
     }
+}
+
+const styles = {
+  imageStyle: {
+    width: '50px',
+    height: '50px',
+    float: 'left',
+    marginTop: '-16px',
+    zIndex: '2'
+  }
 }
 
 function mapStateToProps(state) {
